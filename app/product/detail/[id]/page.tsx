@@ -160,7 +160,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                        : 'border-white opacity-70 hover:opacity-100'
                    }`}
                  >
-                   <img src={`http://localhost:3000/${url}`} alt={`thumb-${i}`} className="w-full h-full object-cover" />
+                   <img src={`${BASE_URL}/${url}`} alt={`thumb-${i}`} className="w-full h-full object-cover" />
                  </button>
                ))}
              </div>
