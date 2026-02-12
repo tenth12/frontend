@@ -13,6 +13,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
   const [selectedImage, setSelectedImage] = useState<string | null>(null); // For main display & modal
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const router = useRouter();
+  const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
   useEffect(() => {
     const fetchDetail = async () => {
@@ -82,7 +83,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                 <div className="flex flex-col items-center justify-center w-full h-full">
                   <TransformComponent wrapperClass="!w-full !h-full flex items-center justify-center" contentClass="!w-full !h-full flex items-center justify-center">
                     <img 
-                      src={`http://localhost:3000/${selectedImage || (product?.imageUrls ? product.imageUrls[0] : '')}`} 
+                      src={`${BASE_URL}/${selectedImage || (product?.imageUrls ? product.imageUrls[0] : '')}`} 
                       alt={product?.name || 'Zoomable Image'} 
                       className="max-w-full max-h-[90vh] object-contain drop-shadow-2xl"
                     />
