@@ -131,7 +131,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                  onClick={() => setIsImageModalOpen(true)}
                >
                   <img 
-                    src={`http://localhost:3000/${selectedImage || product.imageUrls[0]}`} 
+                    src={`${BASE_URL}/${selectedImage || product.imageUrls[0]}`} 
                     alt={product.name} 
                     className="w-full h-full object-contain drop-shadow-2xl"
                   />
